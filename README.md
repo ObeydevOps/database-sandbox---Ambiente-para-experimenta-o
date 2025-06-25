@@ -1,2 +1,29 @@
-# database-sandbox---Ambiente-para-experimenta-o
-Template de banco de dados SQL relacional pronto para uso, com schema completo (usu√°rios, produtos, pedidos) e dados de exemplo. Ideal para prototipagem, testes e como base para aplica√ß√µes web/mobile. Compat√≠vel com SQLite, MySQL e PostgreSQL.
+# Banco de Dados do Projeto
+
+## Estrutura do Banco
+
+O banco de dados consiste em 4 tabelas principais:
+- `users` - Armazena informaÁıes de usu·rios
+- `products` - Cataloga os produtos do sistema
+- `orders` - Registra os pedidos dos clientes
+- `order_items` - Itens que compıem cada pedido
+
+## Como Configurar
+
+1. Execute o script de schema:
+   ```bash
+   sqlite3 database.db < database/schema.sql
+   ```
+
+2. (Opcional) Popule com dados de exemplo:
+   ```bash
+   sqlite3 database.db < database/sample_data.sql
+   ```
+
+## Diagrama Simplificado
+
+```
+users ? orders ? order_items
+           ?
+products ---+
+```
